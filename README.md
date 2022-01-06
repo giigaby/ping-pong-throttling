@@ -16,14 +16,12 @@
 
 # Deploying our app in a Kubernetes cluster with kind
 
-#Execute the start-cluster-linux or the start-cluster-mac-os in order to install the dependencies
+#Execute the start-cluster-linux or the start-cluster-mac-os in order to install the dependencies and create the cluster
 - kind
 - kubectl
 
-#Creation of the cluster with kind
-- kind create cluster --config kubernetes-cluster.yaml
 
-#You can check it 
+#You can check if your cluster was created
 - kind get clusters
 
 #Building our Dockerfile
@@ -49,7 +47,7 @@
 - python3 cli.py
 
 
-# Recommendations for a Kubernetes cluster:
+# Recommendations for a Kubernetes cluster
 
 - To have an optimal cluster(in prod) we should at least have two master nodes in order to achieve High availability
 - Use Deployments instead of naked Pods in order to achieve HA

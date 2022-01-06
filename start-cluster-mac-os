@@ -2,3 +2,5 @@
 
 brew install kind
 brew install kubectl
+
+kind create cluster --config kubernetes-cluster.yaml
