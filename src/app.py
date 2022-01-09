@@ -12,7 +12,7 @@ def limit_x_secret_key():
 
 def host_scope(endpoint_name):
     return request.host
-host_limit = limiter.shared_limit("2/second", scope=host_scope)
+host_limit = limiter.shared_limit("2/second", scope=host_scope, key_func=get_remote_address)
 
 @app.route("/ping")
 @limiter.limit("10/minute", limit_x_secret_key)
