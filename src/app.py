@@ -24,7 +24,7 @@ def pong():
         return jsonify({"message": "ERROR: Unauthorized"}), 401
 
 
-#In next release we will available to get the headers of the elapsed time https://github.com/alisaifee/flask-limiter/issues/276
+#In the next release, we will have available the option to get the headers of the elapsed time https://github.com/alisaifee/flask-limiter/issues/276
 @app.errorhandler(429)
 def ratelimit_handler(e):
     return  make_response(
